@@ -18,6 +18,3 @@ yarn.lock
 /blob-report/
 /playwright/.cache/
 .tanstack
-
-# Stock videos (too large for git, download from Pexels)
-public/videos/*.mp4
