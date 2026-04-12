@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import type { ThemeTokens } from '~/themes/tokens'
+import { ScrollIndicator } from './ScrollIndicator'
 
 type Props = {
   tokens: ThemeTokens
@@ -10,6 +11,7 @@ export function ThemeProvider({ tokens, children }: Props) {
   return (
     <div data-theme style={tokens as CSSProperties}>
       {children}
+      <ScrollIndicator />
     </div>
   )
 }

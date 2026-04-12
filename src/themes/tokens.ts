@@ -16,6 +16,8 @@ export type ThemeTokens = {
   '--radius': string
   '--font-body': string
   '--font-display': string
+  '--scrollbar-thumb'?: string
+  '--scrollbar-thumb-hover'?: string
 }
 
 export type FamiliaSlug =

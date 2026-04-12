@@ -24,6 +24,8 @@ export const lujosoVariantes: Variante[] = [
       '--radius': '0px',
       '--font-body': body,
       '--font-display': display,
+      '--scrollbar-thumb': '#d4af37',
+      '--scrollbar-thumb-hover': '#e8c94a',
     },
   },
   {
@@ -46,6 +48,8 @@ export const lujosoVariantes: Variante[] = [
       '--radius': '0px',
       '--font-body': body,
       '--font-display': display,
+      '--scrollbar-thumb': '#c97f4d',
+      '--scrollbar-thumb-hover': '#e0965e',
     },
   },
   {
@@ -68,6 +72,8 @@ export const lujosoVariantes: Variante[] = [
       '--radius': '0px',
       '--font-body': body,
       '--font-display': display,
+      '--scrollbar-thumb': '#1f5d44',
+      '--scrollbar-thumb-hover': '#2a7a5a',
     },
   },
   {
@@ -91,6 +97,8 @@ export const lujosoVariantes: Variante[] = [
       '--radius': '0px',
       '--font-body': body,
       '--font-display': display,
+      '--scrollbar-thumb': '#d4af37',
+      '--scrollbar-thumb-hover': '#e8c94a',
     },
   },
 ]

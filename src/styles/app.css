@@ -34,6 +34,10 @@
 @layer base {
   html {
     color-scheme: light;
+    scrollbar-width: none; /* Firefox */
+  }
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
   }
   html, body {
     @apply antialiased;
