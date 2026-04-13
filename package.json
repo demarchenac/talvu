@@ -1,0 +1,17 @@
+{
+  "name": "axia",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "dev:landing": "turbo dev --filter=@axia/landing",
+    "dev:bot": "turbo dev --filter=@axia/bot",
+    "dev:portal": "turbo dev --filter=@axia/portal",
+    "dev:convex": "npx convex dev"
+  },
+  "devDependencies": {
+    "turbo": "latest",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@10.28.0"
+}

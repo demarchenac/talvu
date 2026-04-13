@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# turbo
+.turbo/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+*.swp
+*.swo
+*~
+
+# build outputs (app-specific ignores may add more)
+dist/
+.output/
+.nitro/
+.vinxi/
+.tanstack/
