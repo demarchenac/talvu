@@ -10,8 +10,12 @@
     "dev:convex": "npx convex dev"
   },
   "devDependencies": {
+    "@types/node": "^22.19.17",
     "turbo": "latest",
     "typescript": "^5.7.0"
   },
-  "packageManager": "pnpm@10.28.0"
+  "packageManager": "pnpm@10.28.0",
+  "dependencies": {
+    "convex": "^1.35.1"
+  }
 }

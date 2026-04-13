@@ -7,7 +7,14 @@ settings:
 importers:
 
   .:
+    dependencies:
+      convex:
+        specifier: ^1.35.1
+        version: 1.35.1(react@19.2.5)
     devDependencies:
+      '@types/node':
+        specifier: ^22.19.17
+        version: 22.19.17
       turbo:
         specifier: latest
         version: 2.9.6
@@ -115,6 +122,14 @@ importers:
       vite:
         specifier: ^8.0.0
         version: 8.0.8(@types/node@22.19.17)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
+
+  apps/portal: {}
+
+  packages/shared:
+    devDependencies:
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
 
 packages:
 
