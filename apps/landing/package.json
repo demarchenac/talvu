@@ -1,5 +1,5 @@
 {
-  "name": "tanstack-start-example-basic",
+  "name": "@axia/landing",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -39,8 +39,5 @@
     "typescript": "^6.0.2",
     "vite": "^8.0.0"
   },
-  "packageManager": "pnpm@10.28.0",
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
-  }
+  "packageManager": "pnpm@10.28.0"
 }
