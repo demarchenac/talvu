@@ -988,8 +988,8 @@ export const MODULES = {
     key: "reviews-automation",
     name: { es: "Reseñas Auto", en: "Reviews Auto" },
     category: "content",
-    priceCOP: 25_000,
-    priceUSD: 6,
+    priceCOP: 40_000,
+    priceUSD: 10,
     dependsOn: ["bot-whatsapp"],
   },
   store: {
@@ -1021,15 +1021,15 @@ export const ADDONS = {
     key: "conversation-pack-100",
     name: { es: "100 conversaciones extra", en: "100 extra conversations" },
     perUnit: true,
-    priceCOP: 50_000,
-    priceUSD: 12,
+    priceCOP: 100_000,
+    priceUSD: 25,
   },
   "storage-pack-10gb": {
     key: "storage-pack-10gb",
     name: { es: "10 GB extra", en: "10 GB extra" },
     perUnit: true,
-    priceCOP: 20_000,
-    priceUSD: 5,
+    priceCOP: 40_000,
+    priceUSD: 10,
   },
 } as const
 
@@ -1038,10 +1038,10 @@ export const BUNDLES = {
     key: "essentials",
     name: { es: "Essentials", en: "Essentials" },
     modules: ["landing", "portal", "bot-whatsapp", "calendar-sync", "web-chat"],
-    priceCOP: 230_000,
-    priceUSD: 57,
-    annualPriceCOP: 2_300_000,
-    annualPriceUSD: 575,
+    priceCOP: 250_000,
+    priceUSD: 62,
+    annualPriceCOP: 2_500_000,
+    annualPriceUSD: 625,
   },
   growth: {
     key: "growth",
@@ -1050,10 +1050,10 @@ export const BUNDLES = {
       "landing", "portal", "bot-whatsapp", "calendar-sync", "web-chat",
       "blog", "ai-translation", "seo-local", "reviews-automation",
     ],
-    priceCOP: 360_000,
-    priceUSD: 90,
-    annualPriceCOP: 3_600_000,
-    annualPriceUSD: 900,
+    priceCOP: 400_000,
+    priceUSD: 100,
+    annualPriceCOP: 4_000_000,
+    annualPriceUSD: 1_000,
   },
   complete: {
     key: "complete",
@@ -1066,10 +1066,10 @@ export const BUNDLES = {
       { key: "custom-domain", quantity: 1 },
       { key: "additional-location", quantity: 2 },
     ],
-    priceCOP: 530_000,
-    priceUSD: 132,
-    annualPriceCOP: 5_300_000,
-    annualPriceUSD: 1_320,
+    priceCOP: 550_000,
+    priceUSD: 137,
+    annualPriceCOP: 5_500_000,
+    annualPriceUSD: 1_375,
   },
 } as const
 ```
@@ -1086,16 +1086,17 @@ export const BUNDLES = {
 | blog | $3.50 | $16.70 | 79% |
 | ai-translation | $1.00 | $5.00 | 80% |
 | seo-local | $1.00 | $5.00 | 80% |
-| reviews-automation | $1.00 | $5.00 | 80% |
+| reviews-automation | $1.00 | $8.30 | 88% |
 | store | $3.00 | $15.80 | 81% |
 | custom-domain | $2.00 | $10.00 | 80% |
 | additional-location | $0 | $8.30 | 100% |
-| conversation-pack-100 | $2.15 | $10.00 | 79% |
+| conversation-pack-100 | $2.15 | $20.80 | 90% |
+| storage-pack-10gb | $2.00 | $8.30 | 76% |
 
 **Bundles:**
-- Essentials: 77% margen anual
-- Growth: 76% margen anual
-- Complete: 79% margen anual
+- Essentials: 78% margen anual
+- Growth: 79% margen anual
+- Complete: 80% margen anual
 
 ### 4.3 Feature gating helper
 
@@ -1657,7 +1658,7 @@ Auto-complete corre cada hora vía Convex cron. Review request scheduled +24h po
 | 17 | Bot/Calendar/Twilio | Service Account, per-specialist, 30min slots, 10min buffer |
 | 18 | Portal auth | Self-service signup + WorkOS invitations + permissions matrix |
 | 19 | Blog/Reviews/GBP | Novel.sh editor + auto-complete +3h + review +24h + GBP Tier 1 |
-| 20 | Pricing modular | 10 módulos + 4 add-ons + 3 bundles, 76-82% margin annual |
+| 20 | Pricing modular | 10 módulos + 4 add-ons + 3 bundles, 74-85% margin annual |
 
 ### 9.2 Glossary
 

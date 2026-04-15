@@ -26,7 +26,7 @@
 16. **WhatsApp**: Twilio Sandbox para demo, Cloudflare Workers + Hono webhook
 17. **Calendar**: Google Service Account, per-specialist calendars, slots 30min + 10min buffer
 18. **Wompi**: per-tenant merchant para eCommerce. Cuenta Talvu separada para billing SaaS
-19. **Pricing modular**: 10 módulos + 4 add-ons + 3 bundles (Essentials/Growth/Complete). 76-82% margin annual
+19. **Pricing modular**: 10 módulos + 4 add-ons + 3 bundles (Essentials/Growth/Complete). 74-85% margin annual
 20. **Demo a Axia** (~6 semanas): solo preview selector + chat widget + bot WhatsApp + Google Calendar
 
 ---
@@ -246,7 +246,7 @@ Observability: Sentry + PostHog (Fase 8+) + Vercel Analytics + BetterStack
 | blog | 80,000 | 800,000 |
 | ai-translation | 25,000 | 250,000 |
 | seo-local | 25,000 | 250,000 |
-| reviews-automation | 25,000 | 250,000 |
+| reviews-automation | 40,000 | 400,000 |
 | store | 75,000 | 750,000 |
 
 ### Add-ons
@@ -255,18 +255,18 @@ Observability: Sentry + PostHog (Fase 8+) + Vercel Analytics + BetterStack
 |---|---|
 | custom-domain (per) | 50,000 |
 | additional-location (per) | 40,000 |
-| conversation-pack-100 | 50,000 |
-| storage-pack-10gb | 20,000 |
+| conversation-pack-100 | 100,000 |
+| storage-pack-10gb | 40,000 |
 
 ### Bundles
 
 | Bundle | Monthly COP | Annual COP/año |
 |---|---|---|
-| Essentials | 230,000 | 2,300,000 |
-| Growth | 360,000 | 3,600,000 |
-| Complete | 530,000 | 5,300,000 |
+| Essentials | 250,000 | 2,500,000 |
+| Growth | 400,000 | 4,000,000 |
+| Complete | 550,000 | 5,500,000 |
 
-**Annual discount: 17% (2 meses gratis).** Margen anual: 76-82% por módulo, 76-79% por bundle.
+**Annual discount: 17% (2 meses gratis).** Margen anual: 79-84% por módulo, 74-82% por bundle.
 
 ---
 

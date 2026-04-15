@@ -35,7 +35,7 @@ Pivot de "Axia landing" a **Talvu**, plataforma SaaS multi-tenant para negocios 
 16. **WhatsApp** Twilio Sandbox + Hono webhook en Cloudflare Workers
 17. **Calendar:** Google Service Account + per-specialist + 30min slots + 10min buffer
 18. **Wompi:** per-tenant merchants (eCommerce). Cuenta Talvu separada (billing)
-19. **Pricing modular:** 10 módulos + 4 add-ons + 3 bundles (Essentials/Growth/Complete). 76-82% margin annual
+19. **Pricing modular:** 10 módulos + 4 add-ons + 3 bundles (Essentials/Growth/Complete). 74-85% margin annual
 20. **Demo Axia:** preview selector + chat widget + bot WhatsApp + Google Calendar. Resto post-demo.
 
 ## Plan por fases (one-liners + checklist)
@@ -134,11 +134,11 @@ Fase 8 (~10 días) — eCommerce (apps/store + Wompi per-tenant)
 
 | Bundle | Monthly COP | Annual COP/año |
 |---|---|---|
-| Essentials (landing+portal+bot+calendar+web-chat) | 230,000 | 2,300,000 |
-| Growth (+ blog+ai-translation+seo+reviews) | 360,000 | 3,600,000 |
-| Complete (+ store+1 domain+2 sedes) | 530,000 | 5,300,000 |
+| Essentials (landing+portal+bot+calendar+web-chat) | 250,000 | 2,500,000 |
+| Growth (+ blog+ai-translation+seo+reviews) | 400,000 | 4,000,000 |
+| Complete (+ store+1 domain+2 sedes) | 550,000 | 5,500,000 |
 
-Annual = monthly × 10 (descuento 17%, 2 meses gratis). Margen anual 76-82%.
+Annual = monthly × 10 (descuento 17%, 2 meses gratis). Margen anual 74-82%.
 
 **Validar pricing antes de exposure público:** customer interviews + Van Westendorp + competitor analysis + cost data Axia.
 
@@ -287,7 +287,7 @@ Storybook stories: ~360 (variant × paleta)
 | blog | 80,000 | 66,700 | 79% |
 | ai-translation | 25,000 | 20,800 | 81% |
 | seo-local | 25,000 | 20,800 | 81% |
-| reviews-automation | 25,000 | 20,800 | 81% |
+| reviews-automation | 40,000 | 33,300 | 80% |
 | store | 75,000 | 62,500 | 81% |
 
 ### Add-ons
@@ -296,16 +296,16 @@ Storybook stories: ~360 (variant × paleta)
 |---|---|---|
 | custom-domain (per) | 50,000 | 500,000 |
 | additional-location (per) | 40,000 | 400,000 |
-| conversation-pack-100 | 50,000 | 500,000 |
-| storage-pack-10gb | 20,000 | 200,000 |
+| conversation-pack-100 | 100,000 | 1,000,000 |
+| storage-pack-10gb | 40,000 | 400,000 |
 
 ### Bundles
 
 | Bundle | Monthly | Annual | Annual margin |
 |---|---|---|---|
-| Essentials | 230,000 | 2,300,000 | 77% |
-| Growth | 360,000 | 3,600,000 | 76% |
-| Complete | 530,000 | 5,300,000 | 79% |
+| Essentials | 250,000 | 2,500,000 | 78% |
+| Growth | 400,000 | 4,000,000 | 83% |
+| Complete | 550,000 | 5,500,000 | 85% |
 
 ### Trial + free strategy
 
@@ -538,7 +538,7 @@ AI translation: botón en portal que llama Gemini con prompt dental + sourceLoca
 | 17 | Bot/Calendar/Twilio | Service Account + per-specialist + 30min slots |
 | 18 | Portal auth | Self-service signup + WorkOS invitations |
 | 19 | Blog/Reviews/GBP | Novel.sh + auto-complete +3h + GBP Tier 1 |
-| 20 | Pricing modular | 10 modules + 4 add-ons + 3 bundles, 76-82% margin |
+| 20 | Pricing modular | 10 modules + 4 add-ons + 3 bundles, 74-85% margin |
 
 ---
 
