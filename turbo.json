@@ -7,7 +7,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".output/**", "dist/**", ".vinxi/**"]
+      "outputs": [".output/**", ".vercel/output/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]

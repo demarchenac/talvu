@@ -1,0 +1,6 @@
+{
+  "buildCommand": "pnpm turbo build --filter=@talvu/landing",
+  "outputDirectory": "apps/landing/.vercel/output",
+  "installCommand": "pnpm install",
+  "framework": null
+}
