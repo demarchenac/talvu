@@ -17,14 +17,22 @@ export const lookupPatient = internalQuery({
 });
 
 export const listServices = internalQuery({
-  args: {},
-  handler: async (ctx) => {
-    const services = await ctx.db.query("services").collect();
-    const specialists = await ctx.db.query("specialists").collect();
+  args: { tenantId: v.id("tenants") },
+  handler: async (ctx, args) => {
+    const services = await ctx.db
+      .query("services")
+      .withIndex("by_tenant", (q) => q.eq("tenantId", args.tenantId))
+      .filter((q) => q.eq(q.field("active"), true))
+      .collect();
+
+    const specialists = await ctx.db
+      .query("specialists")
+      .withIndex("by_tenant", (q) => q.eq("tenantId", args.tenantId))
+      .collect();
 
     return services.map((service) => {
-      const specialist = specialists.find(
-        (s) => s._id === service.specialistId,
+      const specialist = specialists.find((s) =>
+        service.specialistIds.includes(s._id),
       );
       return {
         id: service._id,
@@ -53,26 +61,32 @@ export const createPatient = internalMutation({
   args: {
     name: v.string(),
     phone: v.string(),
-    email: v.string(),
-    cedula: v.string(),
+    email: v.optional(v.string()),
+    cedula: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    return ctx.db.insert("patients", args);
+    return ctx.db.insert("patients", { ...args, createdAt: Date.now() });
   },
 });
 
 export const createAppointment = internalMutation({
   args: {
+    tenantId: v.id("tenants"),
+    locationId: v.id("tenantLocations"),
     patientId: v.id("patients"),
     serviceId: v.id("services"),
     specialistId: v.id("specialists"),
-    datetime: v.string(),
+    datetime: v.number(),
+    durationMin: v.number(),
     calendarEventId: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    const now = Date.now();
     return ctx.db.insert("appointments", {
       ...args,
       status: "confirmed",
+      createdAt: now,
+      updatedAt: now,
     });
   },
 });
@@ -82,7 +96,10 @@ export const cancelAppointment = internalMutation({
   handler: async (ctx, args) => {
     const appointment = await ctx.db.get(args.appointmentId);
     if (!appointment) throw new Error("Appointment not found");
-    await ctx.db.patch(args.appointmentId, { status: "cancelled" });
+    await ctx.db.patch(args.appointmentId, {
+      status: "cancelled",
+      updatedAt: Date.now(),
+    });
     return appointment;
   },
 });
@@ -90,7 +107,7 @@ export const cancelAppointment = internalMutation({
 export const rescheduleAppointment = internalMutation({
   args: {
     appointmentId: v.id("appointments"),
-    newDatetime: v.string(),
+    newDatetime: v.number(),
     newCalendarEventId: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -100,6 +117,7 @@ export const rescheduleAppointment = internalMutation({
       datetime: args.newDatetime,
       status: "confirmed",
       calendarEventId: args.newCalendarEventId ?? appointment.calendarEventId,
+      updatedAt: Date.now(),
     });
     return { ...appointment, datetime: args.newDatetime };
   },

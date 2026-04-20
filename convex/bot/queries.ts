@@ -35,6 +35,7 @@ export const saveMessage = internalMutation({
       conversationId: args.conversationId,
       role: args.role,
       content: args.content,
+      createdAt: Date.now(),
     });
   },
 });
