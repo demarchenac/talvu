@@ -38,7 +38,11 @@ export function buildClinicoSections(video?: string): SectionDefinition[] {
         badge: i18n('Atención certificada · Tecnología de vanguardia'),
         imageUrl: video ? undefined : 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=85',
         videoUrl: video,
-        socialProof: i18n('⭐⭐⭐⭐⭐ <strong>4.9</strong> en Google · +8.500 pacientes'),
+        socialProof: {
+          rating: '4.9',
+          ratingSource: i18n('en Google'),
+          extraText: i18n('+8.500 pacientes'),
+        },
         highlightStat: { value: '12+', label: i18n('Años cuidando sonrisas') },
         ctas: [
           { label: i18n('Agendar consulta'), href: whatsappLink(), variant: 'primary' as const },

@@ -14,7 +14,10 @@ export function SectionRenderer({ sections, locale }: Props) {
         .sort((a, b) => a.order - b.order)
         .map((s) => {
           const Component = getSection(s.type, s.variant)
-          if (!Component) return null
+          if (!Component) {
+            console.warn(`[SectionRenderer] Unknown section: ${s.type}::${s.variant}`)
+            return null
+          }
           return <Component key={s.id} content={s.content} locale={locale} sectionId={s.id} />
         })}
     </main>

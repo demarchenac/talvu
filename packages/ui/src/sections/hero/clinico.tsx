@@ -15,7 +15,11 @@ export const heroClinicoVideoMeta = {
 }
 
 interface ClinicoHeroContent extends HeroContent {
-  socialProof?: Record<string, string>
+  socialProof?: {
+    rating: string
+    ratingSource: Record<string, string>
+    extraText: Record<string, string>
+  }
   highlightStat?: { value: string; label: Record<string, string> }
 }
 
@@ -46,7 +50,13 @@ function CtaButtons({ content, locale, isVideo }: { content: ClinicoHeroContent;
       </div>
       {content.socialProof && (
         <div className={`flex items-center gap-6 mt-10 text-sm ${isVideo ? 'text-white/70' : 'text-[var(--fg-muted)]'}`}>
-          <div dangerouslySetInnerHTML={{ __html: resolve(content.socialProof, locale) }} />
+          <div className="flex items-center gap-2">
+            ⭐⭐⭐⭐⭐{' '}
+            <strong className={isVideo ? 'text-white' : 'text-[var(--fg)]'}>{content.socialProof.rating}</strong>{' '}
+            {resolve(content.socialProof.ratingSource, locale)}
+          </div>
+          <div>·</div>
+          <div>{resolve(content.socialProof.extraText, locale)}</div>
         </div>
       )}
     </>
