@@ -62,7 +62,7 @@ function Home() {
                 <p className="text-neutral-400 text-lg leading-relaxed">{meta.tagline}</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {items.filter((v) => !v.video).map((v) => {
+                {items.map((v) => {
                   const href = `/${v.familia}/${v.paleta}`
                   return (
                     <div
@@ -111,6 +111,7 @@ function Home() {
                             familia={v.familia as FamiliaSlug}
                             paleta={v.paleta}
                             tokens={v.tokens as Record<string, string>}
+                            video={v.video}
                           />
                         </ClientOnly>
                       </div>

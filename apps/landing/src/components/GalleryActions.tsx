@@ -22,10 +22,12 @@ export function GalleryActions({
   familia,
   paleta,
   tokens,
+  video,
 }: {
   familia: FamiliaSlug
   paleta: string
   tokens: Record<string, string>
+  video?: string
 }) {
   const tenant = useQuery(api.tenants.getBySlug, { slug: 'axia' })
   const applyFullPage = useMutation(api.pages.applyFullPage)
@@ -40,7 +42,7 @@ export function GalleryActions({
     setApplying(true)
     try {
       const buildSections = builders[familia]
-      const sections = buildSections()
+      const sections = buildSections(video)
       await applyFullPage({
         tenantId: tenant._id,
         sections: sections.map((s) => ({
