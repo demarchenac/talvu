@@ -1,19 +1,20 @@
 import { createFileRoute, notFound, Link } from '@tanstack/react-router'
 import { findVariante, type FamiliaSlug } from '~/themes/tokens'
-import { ThemeProvider } from '~/components/ThemeProvider'
 import { DemoBadge } from '~/components/DemoBadge'
-import { EleganteTemplate } from '~/templates/EleganteTemplate'
-import { LujosoTemplate } from '~/templates/LujosoTemplate'
-import { ClinicoTemplate } from '~/templates/ClinicoTemplate'
 import { TokenProvider } from '@talvu/ui/components/TokenProvider'
 import { SectionRenderer } from '@talvu/ui/components/SectionRenderer'
 import { ScrollIndicator } from '~/components/ScrollIndicator'
 import { buildCalidoSections } from '~/data/calido-sections'
+import { buildEleganteSections } from '~/data/elegante-sections'
+import { buildLujosoSections } from '~/data/lujoso-sections'
+import { buildClinicoSections } from '~/data/clinico-sections'
+import type { SectionDefinition } from '@talvu/ui/sections/types'
 
-const templates: Record<string, (props: { video?: string }) => React.JSX.Element> = {
-  'elegante-y-sofisticado': EleganteTemplate,
-  'lujoso-y-premium': LujosoTemplate,
-  'clinico-y-profesional': ClinicoTemplate,
+const builders: Record<FamiliaSlug, (video?: string) => SectionDefinition[]> = {
+  'calido-y-amigable': buildCalidoSections,
+  'elegante-y-sofisticado': buildEleganteSections,
+  'lujoso-y-premium': buildLujosoSections,
+  'clinico-y-profesional': buildClinicoSections,
 }
 
 export const Route = createFileRoute('/$familia/$paleta')({
@@ -27,31 +28,20 @@ export const Route = createFileRoute('/$familia/$paleta')({
 
 function VariantePage() {
   const { variante } = Route.useLoaderData()
+  const buildSections = builders[variante.familia]
+  const sections = buildSections(variante.video)
 
-  if (variante.familia === 'calido-y-amigable') {
-    const sections = buildCalidoSections(variante.video)
-    return (
-      <TokenProvider tokens={variante.tokens}>
-        <BackToGallery />
-        <SectionRenderer sections={sections} locale="es" />
-        <ScrollIndicator />
-        <DemoBadge />
-      </TokenProvider>
-    )
-  }
-
-  const Template = templates[variante.familia]
   return (
-    <ThemeProvider tokens={variante.tokens}>
+    <TokenProvider tokens={variante.tokens}>
       <BackToGallery />
-      <Template video={variante.video} />
+      <SectionRenderer sections={sections} locale="es" />
+      <ScrollIndicator />
       <DemoBadge />
-    </ThemeProvider>
+    </TokenProvider>
   )
 }
 
 function BackToGallery() {
-  // Hidden inside iframes (same-origin check via window.self !== window.top)
   if (typeof window !== 'undefined' && window.self !== window.top) return null
   return (
     <Link

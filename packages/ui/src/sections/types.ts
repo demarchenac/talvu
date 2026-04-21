@@ -21,6 +21,8 @@ export interface HeaderContent {
   clinicName: string
   doctorName?: string
   navItems: Array<{ label: Record<string, string>; href: string }>
+  ctaLabel?: Record<string, string>
+  ctaHref?: string
   overlay: boolean
 }
 
@@ -60,6 +62,7 @@ export interface TeamMember {
   role: Record<string, string>
   bio: Record<string, string>
   photoUrl: string
+  specialties?: string[]
 }
 
 export interface TeamContent {
@@ -83,16 +86,27 @@ export interface TestimonialsContent {
   items: TestimonialItem[]
 }
 
+export interface StatsItem {
+  value: string
+  label: Record<string, string>
+}
+
+export interface StatsContent {
+  items: StatsItem[]
+}
+
 export interface CtaContent {
+  eyebrow?: Record<string, string>
   emoji?: string
   heading: Record<string, string>
   subheading: Record<string, string>
   cta: I18nCta
-  details: Array<{ icon: string; text: Record<string, string> }>
+  details: Array<{ icon: string; label?: Record<string, string>; text: Record<string, string> }>
 }
 
 export interface FooterContent {
   clinicName: string
+  doctorName?: string
   text?: Record<string, string>
 }
 
